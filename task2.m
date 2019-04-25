@@ -9,7 +9,8 @@ function task2(image)
    sv = svds(A, maxSize);
    k = [1:maxSize];
    
-   %plot(k, sv);
+   figure(1);
+   plot(k, sv);
    
    %% Second Plot
    info = zeros(maxSize, 1);
@@ -24,7 +25,8 @@ function task2(image)
    endfor
    clear sum;
    
-   %plot(k, info);
+   figure(2);
+   plot(k, info);
    
    
    %% Third Plot
@@ -33,6 +35,8 @@ function task2(image)
      A_k = task1(image, i);
      error(i) = sum(sumsq(A - A_k)) / (m * n);   
    endfor 
+   
+   figure(3);
    plot(k, error);
    
    %% Fourth Plot
@@ -41,6 +45,7 @@ function task2(image)
      compression(i) = (m*i + n*i + i) / (m*n);
    endfor 
    
-   %plot(k, compression);
+   figure(4);
+   plot(k, compression);
        
 end
